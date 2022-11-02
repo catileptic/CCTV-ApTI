@@ -1,0 +1,48 @@
+<section>
+    <div class="container is-flex is-flex-direction-row is-align-items-center pt-3">
+        <a href="https://apti.ro/" target="_blank" rel="noopener">
+            <div class="image is-64x64">
+                <img src="{{ "images/apti.png" | relURL }}" alt="Asociația pentru Tehnologie și Internet">
+            </div>
+        </a>
+        <a href="https://www.inovarepublica.ro/" target="_blank" rel="noopener">
+        <div class="image is-64x64">
+            <img src="{{ "images/cpip.png" | relURL }}" alt="Asociația pentru Tehnologie și Internet">
+        </div>
+        </a>
+        <p class="pl-4">Proiect susținut de <a href="https://apti.ro/" target="_blank" rel="noopener">Asociația pentru Tehnologie și Internet</a> și <a href="https://www.inovarepublica.ro/" target="_blank" rel="noopener">Centrul pentru Inovare Publică</a>.</p>
+    </div>
+</section>
+<div class="container">
+    <nav class="navbar is-size-5" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-semibold" href="/">
+                <i class="fa fa-video-camera fa-rotate-180"></i><i class="fa fa-minus fa-rotate-90"></i><i
+                    class="fa fa-video-camera"></i>
+            </a>
+            <a class="navbar-item has-text-weight-semibold" href="/">
+                CCTV
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="navbarMain">
+            <div class="navbar-end has-text-centered-touch">
+
+                {{ range .Site.Menus.main }}
+                <a class="navbar-item" href="{{ .URL }}">
+                    {{ $text := print .Name | safeHTML }}
+                    {{ $text }}
+                </a>
+                {{ end }}
+
+            </div>
+        </div>
+
+    </nav>
+</div>

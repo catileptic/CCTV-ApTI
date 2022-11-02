@@ -1,0 +1,57 @@
+{{ if .IsNamedParams }}
+
+    {{ if (.Get "source") }}
+
+        {{ $source := (.Get "source") }}
+        {{ $data := index .Site.Data $source }}
+        {{ $mapLat := default "" (.Get "mapLat") }}
+        {{ $mapLon := default "" (.Get "mapLon") }}
+        {{ $zoom := default "13" (.Get "zoom") }}
+        {{ $mapWidth := default "100%" (.Get "mapWidth") }}
+        {{ $mapHeight := default "400px" (.Get "mapHeight") }}
+        {{ $mapId := default (md5 (printf "%s%s" $mapLat $mapLon)) (.Get "mapId") }}
+        {{ $scrollWheelZoom := default "true" (.Get "scrollWheelZoom") }}
+        {{ $downloadPath := (printf "/json/%s.json" (.Get "source")) }}
+
+        <!--Container-->
+        <div id='mapid_{{ $mapId }}' class="leaflet-map" style='width: {{ $mapWidth }}; height: {{ $mapHeight}};'></div>
+
+        <div><b><p class="has-text-right is-size-4 pt-3"><a href="{{ $downloadPath }}" download>Descarcă datele</a></p></b></div>
+
+        <script>
+            console.log({{ $data }});
+            var mapData = {{ $data }};
+            var leafletMapsObj = {};
+            
+            //Create Map
+            leafletMapsObj[{{ $mapId }}] = L.map('mapid_{{ $mapId }}').setView([{{ $mapLat }}, {{ $mapLon }}], {{ $zoom }});
+            
+            {{ if eq $scrollWheelZoom "false" }}
+                leafletMapsObj[{{ $mapId }}].scrollWheelZoom.disable();
+            {{ end }}
+            
+            //Add tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(leafletMapsObj[{{ $mapId }}]);
+
+            //Add markers
+            mapData.forEach(e => {
+                L.marker([parseFloat(e.latitudine), parseFloat(e.longitudine)], {icon: L.divIcon({
+                    html: '<i class="fa fa-map-marker fa-2x has-text-danger"></i>',
+                    iconSize: [10,10],
+                    iconAnchor: [10,20],
+                    className: 'myDivIcon'
+                })}).addTo(leafletMapsObj[{{ $mapId }}]);
+            });
+
+        </script>
+        {{.Inner}}
+
+    {{ else  }}
+    {{ errorf "Leaflet Hugo Shortcode: please provide data source" }}
+    {{ end }}
+
+{{ else }}
+{{ errorf "Leaflet Hugo Shortcode: please provide named Parameters" }}
+{{ end }}

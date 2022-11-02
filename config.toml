@@ -1,0 +1,10 @@
+baseURL = "https://cctv.apti.ro"
+languageCode = "en-us"
+title = "CCTV"
+theme = "apti_cctv"
+
+[menu]
+  [[menu.main]]
+    name = "Despre proiect"
+    url = "/despre/"
+    weight = 2

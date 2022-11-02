@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="hero is-link">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered row-reverse">
+        <div class="column is-6-dekstop has-text-centered-mobile">
+          <p class="title is-spaced ">
+            {{ .Title }}
+          </p>  
+          {{ if ne .Type "page" }}
+          <p class="subtitle">
+           {{ partial "metadata.html" . }}
+          </p>  
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-max-desktop">
+    <div class="section content">
+        {{ .Content }}
+    </div>
+    
+</div>
+
+
+{{ end }}

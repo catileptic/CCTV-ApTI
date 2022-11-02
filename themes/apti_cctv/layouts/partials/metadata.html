@@ -1,0 +1,5 @@
+<span class="has-text-white"><i class="fa fa-calendar "></i></span> <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+    {{ .PublishDate.Format "2006-01-02" }}
+</time>
+<span class="has-text-white"><i class="fa fa-user "></i></span> {{ .Params.author }}
+

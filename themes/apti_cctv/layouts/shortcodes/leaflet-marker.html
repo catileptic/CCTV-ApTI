@@ -1,0 +1,33 @@
+{{ if .IsNamedParams }}
+
+{{ $markerLat := default "" (.Get "markerLat") }}
+{{ $markerLon := default "" (.Get "markerLon") }}
+
+    {{ with .Parent }}
+
+        {{ $mapLat := default "" (.Get "mapLat") }}
+        {{ $mapLon := default "" (.Get "mapLon") }}
+        {{ $mapId := default (md5 (printf "%s%s" $mapLat $mapLon)) (.Get "mapId") }}
+        {{ $markerId := md5 (printf "%s%s%s" $mapId $markerLat $markerLon)}}
+
+        <script>
+
+            //Marker
+            L.marker([{{ $markerLat }}, {{ $markerLon }}], {icon: L.divIcon({
+                html: '<i class="fa fa-map-marker fa-4x"></i>',
+                iconSize: [20,20],
+                iconAnchor: [10,20],
+                className: 'myDivIcon'
+            })}).addTo(leafletMapsObj[{{ $mapId }}]);
+        </script>
+
+    {{ else }}
+    {{ errorf "Leaflet Hugo Shortcode: impossible using marker outside leaflet-map" }}
+    {{ end }}
+
+{{ else }}
+{{ errorf "Leaflet Hugo Shortcode: please provide named Parameters for marker" }}
+{{ end }}
+
+
+

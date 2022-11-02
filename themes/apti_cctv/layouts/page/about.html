@@ -1,0 +1,80 @@
+{{ define "main" }}
+<section class="hero is-link">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered row-reverse">
+        <div class="column is-6-dekstop has-text-centered-mobile">
+          <p class="title is-spaced ">
+            {{ .Title }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-max-desktop">
+  <div class="section content is-size-5">
+    {{ .Content }}
+  </div>
+
+  <div class="section">
+    <h2 class="subtitle"><b>Parteneri</b></h2>
+
+    <div class="columns">
+      <div class="column is-three-quarters-touch is-3-desktop">
+        <a href="https://apti.ro/" target="_blank" rel="noopener">
+          <div  class="image is-128x128">
+            <img src="{{ "images/apti.png" | relURL }}" alt="Asociația pentru Tehnologie și Internet">
+          </div>
+        </a>
+      </div>
+
+      <div class="column is-three-quarters-touch is-3-desktop">
+        <a href="https://www.inovarepublica.ro/" target="_blank" rel="noopener">
+          <div class="image is-128x128">
+            <img src="{{ "images/cpip.png" | relURL }}" alt="Centrul pentru Inovare Publică">
+          </div>
+        </a>
+      </div>
+
+      <div class="column is-three-quarters-touch is-3-desktop">
+        <a href="https://www.ccea.ro/" target="_blank" rel="noopener">
+          <div class="image is-128x128">
+            <img src="{{ "images/centrulcea.png" | relURL }}" alt="Centrul de Cercetare în Etică Aplicată">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <h2 class="subtitle"><b>Parteneri media</b></h2>
+
+    <div class="columns">
+      <div class="column is-three-quarters-touch is-3-desktop">
+        <a href="https://panorama.ro/" target="_blank" rel="noopener">
+          <div class="image is-128x128">
+            <img src="{{ "images/panorama.png" | relURL }}" alt="Panorama">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <h2 class="subtitle"><b>Finanțator</b></h2>
+
+    <div class="columns">
+      <div class="column is-three-quarters-touch is-3-desktop">
+        <a href="https://www.opensocietyfoundations.org/" target="_blank" rel="noopener">
+          <div class="image is-128x128">
+            <img src="{{ "images/osf.png" | relURL }}" alt="Panorama">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+{{ end }}
