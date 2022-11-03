@@ -9,8 +9,6 @@ Zece primării ne-au trimis locațiile camerelor de supraveghere a spațiului pu
 
 Seturile de date individuale pot fi descărcate apăsând link-ul de sub hartă. 
 
-Răspunsurile inițiale ale primăriile pot fi descărcate din pagina principală, secțiunea **Descarcă date**.
-
 ## Cluj-Napoca
 
 {{< leaflet-map mapHeight="500px" mapWidth="100%" mapLat="46.7720406" mapLon="23.5979033" source="cluj">}}

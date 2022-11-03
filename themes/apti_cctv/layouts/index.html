@@ -35,6 +35,20 @@
   </div>
 </section>
 
+<section class="box mb-0">
+  <div class="container pt-3">
+      <i><p>
+        Proiect susținut de 
+        <a href="https://apti.ro/" target="_blank" rel="noopener">
+        Asociația pentru Tehnologie și Internet</a>, 
+        <a href="https://www.inovarepublica.ro/" target="_blank" rel="noopener">
+        Centrul pentru Inovare Publică</a> și
+        <a href="https://www.ccea.ro/" target="_blank" rel="noopener">Centrul de Cercetare în Etică Aplicată</a>. 
+        <a href="https://panorama.ro/" target="_blank" rel="noopener">Panorama.ro</a> este partener media.
+        </p></i>
+  </div>
+</section>
+
 <div class="section">
   <div class="container is-size-5">
     <h2 class="subtitle">
@@ -113,137 +127,7 @@
   </div>
 </div>
 
-<div class="section">
-  <div class="container is-size-5">
-    <h2 class="subtitle">
-      <b>Resurse</b>
-    </h2>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-map-marker has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="{{ " /harti/" | safeHTML }}">Hărți cu amplasamentul camerelor de supraveghere</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-envelope has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="{{ " /cerere/" | safeHTML }}">Model cerere pentru a obține imaginile cu tine, inregistrate de
-              camere</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="section">
-  <div class="container is-size-5">
-    <h2 class="subtitle">
-      <b>Articole recente</b>
-    </h2>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-sticky-note has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="" target="_blank" rel="noopener">Articol achiziții publice</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-sticky-note has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="" target="_blank" rel="noopener">Articol etică</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-sticky-note has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="https://panorama.ro/camere-supraveghere-spatiu-public-sfaturi-juridice/" target="_blank"
-              rel="noopener">Statul cu o geană pe noi: un caz practic și 6 sfaturi juridice pentru autoritățile care
-              pun camere video în spațiul public</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-sticky-note has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="https://panorama.ro/autoritati-camere-supraveghere-cum-reactioneaza/" target="_blank"
-              rel="noopener">Ochii ageri ai autorităților ne privesc prin camere de supraveghere. Cum reacționează
-              când
-              le ceri socoteală?</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <figure class="media-left">
-        <i class="fa fa-sticky-note has-text-danger"></i>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <a href="" target="_blank" rel="noopener">Articol securitate</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- {{ range (where .Site.RegularPages "Section" "blog" | first 5) }}
-  <div class="media">
-    <figure class="media-left">
-      <i class="fa fa-sticky-note has-text-danger"></i>
-    </figure>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  {{ end }} -->
-
-
-
-  </div>
-</div>
+{{- partial "resources.html" . -}}
 
 <section class="hero is-info">
   <div class="hero-body">
