@@ -4,14 +4,15 @@
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
-    <meta name="description" content="CCTV">
+    <meta name="description" content="CCTV is a project about the state of surveillance cameras in the public space, in Romania.">
     <meta name="author" content="Alex Stefanescu">
 
-    <meta property="og:title" content="CCTV">
+    <meta property="og:title" content="Supravegherea spațiului public românesc">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-    <meta property="og:description" content="CCTV">
-    <meta property="og:image" content="image.png">
+    <meta property="og:url" content="https://cctv.apti.ro/">
+    <meta property="og:description" content="O cercetare exploratorie despre camerele video din spațiul public românesc.">
+    <meta property="og:image" content="{{ "images/rec.png" | relURL }}">
+    <meta property="og:locale" content="ro_RO" />
 
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
